@@ -1,9 +1,9 @@
 import {combineReducers} from "redux";
 import {reducer as formReducer} from "redux-form";
 
-import timeReducer from './TimeReducer';
+import blogReducer from './BlogReducer';
 
 export default combineReducers({
-    timeStamp: timeReducer,
+    blogPost: blogReducer,
     form: formReducer
 })

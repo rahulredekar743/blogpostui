@@ -1,5 +1,3 @@
-export const CREATE_TIME = 'CREATE_TIMESTAMP';
-export const FETCH_TIME = 'FETCH_TIMESTAMP';
-export const FETCH_TIMES = 'FETCH_TIMESTAMPS';
-export const DELETE_TIME = 'DELETE_TIMESTAMP';
-export const EDIT_TIME = 'EDIT_TIMESTAMP';
+export const CREATE_POST = 'CREATE_POST';
+export const FETCH_POST = 'FETCH_POST';
+export const FETCH_POSTS = 'FETCH_POSTS';

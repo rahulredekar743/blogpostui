@@ -1,57 +1,35 @@
 import {
-    CREATE_TIME,
-    FETCH_TIME,
-    FETCH_TIMES,
-    EDIT_TIME,
-    DELETE_TIME
+    CREATE_POST,
+    FETCH_POST,
+    FETCH_POSTS
 } from "./types";
 
-import timeStamp from '../apis/timestamp';
+import blogpost from '../apis/blogpost';
 
 import history from '../history';
 
-export const createTime = (formValues) => {
-    console.log('action', formValues)
+export const createPost = (formValues) => {
+    console.log('action', formValues);
     return async (dispatch) => {
-        const response = await timeStamp.post('/timeStamp', {...formValues});
+        const response = await blogpost.post('/blogPost', {...formValues});
 
-        dispatch({type: CREATE_TIME, payload: response.data});
+        dispatch({type: CREATE_POST, payload: response.data});
         history.push('/');
     }
 };
 
-export const fetchTimes = () => {
+export const fetchPosts = () => {
     return async (dispatch) => {
-        const response = await timeStamp.get('/timeStamp');
+        const response = await blogpost.get('/blogPost');
 
-        dispatch({type: FETCH_TIMES, payload: response.data})
+        dispatch({type: FETCH_POSTS, payload: response.data})
     }
 };
 
-export const fetchTime = (id) => {
+export const fetchPost = (id) => {
     return async (dispatch) => {
-        const response = await timeStamp.get(`/timeStamp/${id}`);
+        const response = await blogpost.get(`/blogPost/${id}`);
 
-        dispatch({type: FETCH_TIME, payload: response.data})
-    }
-};
-
-export const editTime = (id, formValues) => {
-    return async (dispatch) => {
-        const response = await timeStamp.patch(`/timeStamp/${id}`, formValues);
-
-        dispatch({type: EDIT_TIME, payload: response.data});
-
-        history.push(`/`);
-    }
-};
-
-export const deleteTime = (id) => {
-    return async (dispatch) => {
-        await timeStamp.delete(`/timeStamp/${id}`);
-
-        dispatch({type: DELETE_TIME, payload: id});
-
-        history.push(`/`);
+        dispatch({type: FETCH_POST, payload: response.data})
     }
 };

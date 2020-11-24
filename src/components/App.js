@@ -2,10 +2,8 @@ import React from 'react';
 import {Router, Route, Switch} from 'react-router-dom';
 
 import history from '../history';
-import TimeList from './timestamps/TimeList';
-import TimeCreate from './timestamps/TimeCreate';
-import TimeEdit from './timestamps/TimeEdit';
-import TimeDelete from './timestamps/TimeDelete';
+import BlogList from './BlogPost/BlogList';
+import BlogCreate from './BlogPost/BlogCreate';
 import Header from './Header';
 
 const App = () => {
@@ -16,10 +14,8 @@ const App = () => {
                 <div>
                     <Header/>
                     <Switch>
-                        <Route path={`/`} exact component={TimeList}/>
-                        <Route path={`/timetrack/new`} component={TimeCreate}/>
-                        <Route path={`/timetrack/edit/:id`} component={TimeEdit}/>
-                        <Route path={`/timetrack/delete/:id`} component={TimeDelete}/>
+                        <Route path={`/`} exact component={BlogList}/>
+                        <Route path={`/blogpost/new`} component={BlogCreate}/>
                     </Switch>
                 </div>
             </Router>

@@ -5,11 +5,11 @@ const Header = () => {
     return (
         <div className={`ui secondary pointing menu`}>
             <Link to={`/`} className={`item`}>
-                TimeStamp
+                Blog Post
             </Link>
             <div className={`right menu`}>
                 <Link to={`/`} className={`item`}>
-                    All TimeStamps
+                    All Blog
                 </Link>
             </div>
         </div>
